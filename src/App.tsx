@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Afrivate from "./pages/projects/Afrivate";
+import { Analytics } from "@vercel/analytics/next";
 
 const queryClient = new QueryClient();
 
