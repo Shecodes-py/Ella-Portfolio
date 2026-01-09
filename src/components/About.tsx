@@ -8,8 +8,8 @@ const skills = [
   },
   {
     icon: Server,
-    title: "Django & Flask",
-    description: "Building scalable web applications and RESTful APIs with Django and Flask frameworks.",
+    title: "Django",
+    description: "Building scalable web applications and RESTful APIs with Django framework.",
   },
   {
     icon: Database,

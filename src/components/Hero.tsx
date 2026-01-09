@@ -46,7 +46,7 @@ const Hero = () => {
 
           {/* Tech Stack Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-up animation-delay-600">
-            {["Python", "Django", "Flask", "FastAPI", "Node.js", "REST APIs"].map((tech) => (
+            {["Python", "Django", "FastAPI", "Node.js", "REST APIs"].map((tech) => (
               <span
                 key={tech}
                 className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium border border-border hover:border-primary/50 transition-colors"

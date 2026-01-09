@@ -17,7 +17,7 @@ const Index = () => {
         />
         <meta
           name="keywords"
-          content="Backend Developer, Python, Django, Flask, FastAPI, Lagos, Nigeria, Software Engineer"
+          content="Backend Developer, Python, Django, FastAPI, Lagos, Nigeria, Software Engineer"
         />
         <meta property="og:title" content="Ella Udotong | Backend Developer" />
         <meta
