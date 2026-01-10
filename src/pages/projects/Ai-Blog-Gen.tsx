@@ -48,7 +48,7 @@ const AIBlogGenerator = () => {
               </div>
               <div className="p-4 rounded-xl bg-card border border-border">
                 <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Stack</p>
-                <p className="font-semibold">Python, FastAPI, OpenAI API</p>
+                <p className="font-semibold">Python, Django, Gemini API</p>
               </div>
               <div className="p-4 rounded-xl bg-card border border-border">
                 <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Status</p>
@@ -195,6 +195,20 @@ const AIBlogGenerator = () => {
               <li>• Saved drafts and user accounts</li>
               <li>• Caching repeated prompts</li>
               <li>• Cost monitoring per request</li>
+            </ul>
+          </section>
+
+          {/* Impact & Learnings */}
+          <section>
+            <h2 className="text-2xl font-display font-bold mb-6 flex items-center gap-3">
+              <CheckCircle className="w-6 h-6 text-primary" />
+              Impact & Key Learnings
+            </h2>
+            <ul className="space-y-2 text-muted-foreground">
+                <li>• Reduced draft generation time from 30 mins to less than 1 min</li>
+                <li>• Achieved consistent blog structure across 50+ test cases</li>
+                <li>• Developed a deeper understanding of prompt engineering for structured outputs. </li>
+                <li>• Gained experience building robust backend services that integrate with AI APIs.</li>
             </ul>
           </section>
 
