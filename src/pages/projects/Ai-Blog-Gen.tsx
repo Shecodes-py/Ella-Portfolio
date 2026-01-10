@@ -1,4 +1,4 @@
-import {ArrowLeft, Github, FileText, Server, Database, Shield, Zap, CheckCircle, AlertTriangle, Lightbulb,} from "lucide-react";
+import {ArrowLeft, ArrowDown, ArrowRight, Github, FileText, Server, Database, Shield, Zap, CheckCircle, AlertTriangle, Lightbulb,} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -48,7 +48,7 @@ const AIBlogGenerator = () => {
               </div>
               <div className="p-4 rounded-xl bg-card border border-border">
                 <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Stack</p>
-                <p className="font-semibold">Python, Django, Gemini API</p>
+                <p className="font-semibold">Python, Django, Gemini API, Postgresql</p>
               </div>
               <div className="p-4 rounded-xl bg-card border border-border">
                 <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Status</p>
@@ -72,10 +72,21 @@ const AIBlogGenerator = () => {
                   View GitHub
                 </a>
               </Button>
-              <Button variant="outline" className="flex items-center gap-2">
+              <Button>
+                <a 
+                href="https://ai-powered-blog-generator-6g2w.onrender.com/"
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                  <FileText className="w-4 h-4" />
+                  Live Demo
+                </a>
+              </Button>
+              {/* <Button variant="outline" className="flex items-center gap-2">
                 <FileText className="w-4 h-4" />
                 API Overview
-              </Button>
+              </Button> */}
             </div>
           </section>
 
@@ -122,9 +133,55 @@ const AIBlogGenerator = () => {
               <Server className="w-6 h-6 text-primary" />
               System Architecture
             </h2>
-            <div className="p-6 rounded-2xl bg-card border border-border space-y-3">
-              <p className="text-muted-foreground">
-                Client → API → Prompt Builder → AI API → Response Parser → Output
+            
+            <div className="p-8 rounded-2xl bg-card border border-border">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                
+                {/* Step 1: Client */}
+                <div className="flex flex-col items-center gap-2">
+                  <div className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 font-medium">Client</div>
+                </div>
+
+                <ArrowRight className="hidden md:block w-5 h-5 text-muted-foreground" />
+                <ArrowDown className="md:hidden w-5 h-5 text-muted-foreground" />
+
+                {/* Step 2: API */}
+                <div className="flex flex-col items-center gap-2">
+                  <div className="px-4 py-2 rounded-lg bg-secondary border border-border font-medium">API Gateway</div>
+                </div>
+
+                <ArrowRight className="hidden md:block w-5 h-5 text-muted-foreground" />
+                <ArrowDown className="md:hidden w-5 h-5 text-muted-foreground" />
+
+                {/* Step 3: Prompt Builder */}
+                <div className="flex flex-col items-center gap-2">
+                  <div className="px-4 py-2 rounded-lg bg-secondary border border-border font-medium text-center">
+                    Prompt <br/> Builder
+                  </div>
+                </div>
+
+                <ArrowRight className="hidden md:block w-5 h-5 text-muted-foreground" />
+                <ArrowDown className="md:hidden w-5 h-5 text-muted-foreground" />
+
+                {/* Step 4: LLM */}
+                <div className="flex flex-col items-center gap-2">
+                  <div className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 font-medium">AI Engine</div>
+                </div>
+
+                <ArrowRight className="hidden md:block w-5 h-5 text-muted-foreground" />
+                <ArrowDown className="md:hidden w-5 h-5 text-muted-foreground" />
+
+                {/* Step 5: Parser */}
+                <div className="flex flex-col items-center gap-2">
+                  <div className="px-4 py-2 rounded-lg bg-secondary border border-border font-medium text-center">
+                    Response <br/> Parser
+                  </div>
+                </div>
+
+              </div>
+              
+              <p className="mt-8 text-center text-sm text-muted-foreground italic">
+                The system handles request validation, prompt engineering, and structured output parsing in a single end-to-end pipeline.
               </p>
             </div>
           </section>
