@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const Contact = () => {
   // email logic
-  const [isOpen, setIsOpen] = useState(false); 
-  const handleSubmit = (e) => { e.preventDefault(); 
-  // Here you can integrate EmailJS, FastAPI endpoint, or any mail service alert("Message sent! (hook this up to your backend/email service)"); setIsOpen(false); };
+  // const [isOpen, setIsOpen] = useState(false); 
+  // const handleSubmit = (e) => { e.preventDefault(); 
+  //  Here you can integrate EmailJS, FastAPI endpoint, or any mail service alert("Message sent! (hook this up to your backend/email service)"); setIsOpen(false); };
 
   return (
     <section id="contact" className="py-24 bg-gradient-hero relative overflow-hidden">
@@ -77,7 +77,7 @@ const Contact = () => {
         </div> 
       </div>
     
-      {/* popup contact form */}
+      {/* popup contact form
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
         <div className="bg-gradient-card p-8 rounded-2xl w-full max-w-md relative">
@@ -123,10 +123,11 @@ const Contact = () => {
             <Button type="submit" className="w-full mt-4">
               Send Message
             </Button>
-          </form>
+          {/* </form>
         </div>
       </div>
-    )}
+    // )} */}    
+    
     </section>
   );
 };
