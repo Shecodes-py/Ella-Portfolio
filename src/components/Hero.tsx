@@ -32,11 +32,12 @@ const Hero = () => {
           {/* Name & Title */}
           <div className="space-y-4 mb-8">
             <p className="text-primary font-medium tracking-wide uppercase text-sm animate-fade-up">
-              Backend Developer
+              PEACE UDOTONG
             </p>
             <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight animate-fade-up animation-delay-200">
-              Hi, I'm{" "}
-              <span className="text-gradient">Ella Udotong</span>
+              {" "}
+              {/* Hi, I'm    */}
+              <span className="text-gradient">BACKEND DEVELOPER</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-fade-up animation-delay-400">
               Python enthusiast & Django developer building scalable backend systems.
@@ -46,7 +47,7 @@ const Hero = () => {
 
           {/* Tech Stack Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-up animation-delay-600">
-            {["Python", "Django", "FastAPI", "Node.js", "REST APIs"].map((tech) => (
+            {["Python", "Django", "Postgres", "SQL", "AWS","GIT", "GitHub", "REST APIs", "OAuth", "JWT"].map((tech) => (
               <span
                 key={tech}
                 className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium border border-border hover:border-primary/50 transition-colors"

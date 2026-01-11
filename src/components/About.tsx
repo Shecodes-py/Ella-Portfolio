@@ -3,23 +3,23 @@ import { Code2, Database, Server, Zap } from "lucide-react";
 const skills = [
   {
     icon: Code2,
-    title: "Python Expert",
-    description: "Proficient in Python with experience building robust applications and scripts.",
+    title: "Python/Django",
+    description: "Building robust backend systems and web applications using Python and Django framework.",
   },
   {
     icon: Server,
-    title: "Django",
-    description: "Building scalable web applications and RESTful APIs with Django framework.",
+    title: "API Development",
+    description: "Designing and implementing RESTful APIs using Django REST Framework (DRF) for seamless client-server communication.",
   },
   {
     icon: Database,
     title: "Database Design",
-    description: "Designing efficient database schemas and optimizing queries for performance.",
+    description: "PostgreSQL and MySQL database schema design, optimization, and management.",
   },
   {
     icon: Zap,
-    title: "FastAPI",
-    description: "Creating high-performance async APIs with FastAPI for modern applications.",
+    title: "Github Actions",
+    description: "Implementing CI/CD pipelines using GitHub Actions for automated testing and deployment.",
   },
 ];
 
@@ -34,13 +34,27 @@ const About = () => {
               About Me
             </p>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-up animation-delay-200">
-              Engineering Student & <span className="text-gradient">Backend Developer</span>
+              <span className="text-gradient">Django Backend Developer</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up animation-delay-400">
-              I'm passionate about building scalable systems and solving complex problems through code.
-              Currently focusing on Django & APIs while pursuing my engineering degree.
-            </p>
+              I'm a developer experienced in Django/Python, who likes building systems that actually survive real usage. <br/>
+              I work mostly on APIs, data models, and backend logic — especially for products where data isn’t perfect and users don’t behave nicely. <br />
+             </p>
           </div>
+
+          {/* Check out my resume button */}
+          <div className="text-center mb-20 animate-fade-up animation-delay-600">
+            <a
+              href="./myresume/Peace-Udotong-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors">
+                Check out my Resume
+              </button>
+            </a>
+          </div>
+
 
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

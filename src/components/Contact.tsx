@@ -1,7 +1,13 @@
 import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { Button } from "./ui/button";
+import { useState } from "react";
 
 const Contact = () => {
+  // email logic
+  const [isOpen, setIsOpen] = useState(false); 
+  const handleSubmit = (e) => { e.preventDefault(); 
+  // Here you can integrate EmailJS, FastAPI endpoint, or any mail service alert("Message sent! (hook this up to your backend/email service)"); setIsOpen(false); };
+
   return (
     <section id="contact" className="py-24 bg-gradient-hero relative overflow-hidden">
       {/* Background elements */}
@@ -10,6 +16,7 @@ const Contact = () => {
 
       <div className="container px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
+
           {/* Section Header */}
           <div className="text-center mb-16">
             <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">
@@ -65,10 +72,61 @@ const Contact = () => {
                 <Send className="w-5 h-5" />
                 Send Me a Message
               </a>
-            </Button>
+            </Button>      
           </div>
+        </div> 
+      </div>
+    
+      {/* popup contact form */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
+        <div className="bg-gradient-card p-8 rounded-2xl w-full max-w-md relative">
+          <button
+            className="absolute top-4 right-4 text-muted-foreground hover:text-primary"
+            onClick={() => setIsOpen(false)}
+          >
+            &times; // Close
+          </button>
+          <h3 className="text-2xl font-display font-bold mb-6">Contact Me</h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Name field */}
+            <div>
+              <label className="block text-sm font-medium mb-1">Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
+              />
+            </div>
+            {/* email field */}
+            <div>
+              <label className="block text-sm font-medium mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
+              />
+            </div>
+            {/* message field */}
+            <div>
+              <label className="block text-sm font-medium mb-1">Message</label>
+              <textarea
+                name="message"
+                rows={4}
+                required
+                className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
+              />
+            </div>
+            {/* Submit button */}
+            <Button type="submit" className="w-full mt-4">
+              Send Message
+            </Button>
+          </form>
         </div>
       </div>
+    )}
     </section>
   );
 };
