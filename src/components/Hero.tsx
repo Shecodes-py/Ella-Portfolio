@@ -1,7 +1,9 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
+import { motion, Variants } from "framer-motion";
 
 const Hero = () => {
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Background grid pattern */}
@@ -13,6 +15,7 @@ const Hero = () => {
       
       <div className="container relative z-10 px-6">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+
           {/* Avatar */}
           <div className="mb-8 animate-fade-up">
             <div className="relative">

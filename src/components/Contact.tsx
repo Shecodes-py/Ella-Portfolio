@@ -2,6 +2,7 @@ import { CheckCircle, Github, Linkedin, Loader2, Mail, MapPin, Send, X } from "l
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { set } from "date-fns";
+// import { motion, Variants } from "framer-motion";
 
 const Contact = () => {
   // email logic
