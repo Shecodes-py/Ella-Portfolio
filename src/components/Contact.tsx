@@ -44,53 +44,63 @@ const Contact = () => {
   };
 
   // Handle input changes
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-    // Clear error for this field when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ""
-      }));
+      setErrors(prev => ({ ...prev, [name]: "" }));
     }
   };
 
-  // Form submission logic
-  const handleSubmit = async (e) => {
+  // The actual Submission Logic
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsLoading(true);
+    setErrors({});
+
     try {
-      // Simulate form submission
+      // Connect to your Render backend 'https://portfolio-contact-api-8iln.onrender.com/api/contact/' or local host 'http://127.0.0.1:8000/api/contact/'
+      const response = await fetch("https://portfolio-contact-api-8iln.onrender.com/api/contact/", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      //views.py
-      // django send mail logic
-      
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setShowSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
+      const data = await response.json();
 
-      setTimeout(() => {
-        setIsOpen(false);
-        setShowSuccess(false);
-      }, 2000);
-
+      if (response.ok) {
+        // Handle Success
+        setShowSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        
+        // Close modal after showing success for 3 seconds
+        setTimeout(() => {
+          setIsOpen(false);
+          setShowSuccess(false);
+        }, 3000);
+      } else {
+        // Handle Django Validation Errors (e.g. invalid email)
+        const serverErrors: Record<string, string> = {};
+        Object.keys(data).forEach(key => {
+          serverErrors[key] = Array.isArray(data[key]) ? data[key][0] : data[key];
+        });
+        setErrors(serverErrors);
+      }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      setErrors({ submit: "Failed to send a message. Please try again." });
+      // Handle Network/CORS errors
+      setErrors({ submit: "The server is currently unreachable. Please try again later." });
     } finally {
       setIsLoading(false);
     }
   };
 
-    // open modal
     const openModal = () => {
       setIsOpen(true);
       setFormData({ name: "", email: "", message: "" });
