@@ -65,7 +65,7 @@ const Contact = () => {
 
     try {
       // Connect to your Render backend 'https://portfolio-contact-api-8iln.onrender.com/api/contact/' or local host 'http://127.0.0.1:8000/api/contact/'
-      const response = await fetch("https://portfolio-contact-api-8iln.onrender.com/api/contact/", {
+      const response = await fetch("https://portfolio-contact-api-8iln.onrender.com/api/contact", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
