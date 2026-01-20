@@ -1,7 +1,6 @@
 
 ## Peace Udotong
 
-```sh
 
 💻 **Portfolio Frontend **
 The interactive, high-performance frontend for my professional portfolio. Built with a focus on clean UI/UX, responsive design, and seamless integration with a custom Django REST API.
@@ -38,6 +37,8 @@ Success: Displays a CheckCircle animation and clears the form data.
 Error Handling: Maps Django REST Framework (DRF) validation errors directly to the relevant input fields (e.g., "Invalid email format").
 
 🚀**Getting Started**
+```sh
+
 # Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
 
@@ -49,7 +50,7 @@ npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-
+```
 
 🎨 **Design Decisions**
 Glassmorphism: Contact cards utilize a semi-transparent background (bg-gradient-card) to create depth.
@@ -65,4 +66,3 @@ Portfolio: peaceudotong.com
 
 LinkedIn: in/peaceudotong
 
-```
